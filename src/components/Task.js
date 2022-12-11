@@ -1,7 +1,16 @@
+import { FaTimes } from "react-icons/fa"
+
 const Task = ({ task }) => {
     return (
         <div className="task">
-            <h3 className="task"> {task.text} </h3>
+            <h3 className="task"> {task.text} 
+                <FaTimes 
+                    style={{ 
+                        color: "red", 
+                        cursor: "pointer"
+                    }}
+                /> 
+            </h3>
             <p> {task.day} </p>
         </div>
     );
