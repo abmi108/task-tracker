@@ -27,6 +27,14 @@ function App() {
 
   const [tasks, setTasks] = useState(taskList);
 
+  // toggle reminder
+  const toggleReminder = (id) => {
+    setTasks(
+      tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task)
+    );
+  }; 
+
+  // delete task
   const deleteTask = (id) => {
     console.log(id);
     setTasks(
@@ -37,8 +45,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask}/>) : "No tasks to show" }
-     
+      {tasks.length > 0 ? 
+        (
+          <Tasks 
+            tasks={tasks} 
+            onDelete={deleteTask}
+            onToggle={toggleReminder}
+          />
+        ) : 
+        "No tasks to show" 
+      }
     </div>
   );
 }
