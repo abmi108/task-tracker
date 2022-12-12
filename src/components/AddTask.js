@@ -41,6 +41,11 @@ const AddTask = () => {
                     />
                 </label>
             </div>
+            <input 
+                type="submit" 
+                className="btn btn-block"
+                value="Save Task"
+            />
         </form>
     );
 };
