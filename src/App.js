@@ -53,7 +53,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header onToggle={() => setAddFormIsShowing(!addFormIsShowing)} />
+      <Header 
+        onToggle={() => setAddFormIsShowing(!addFormIsShowing)} 
+        showAdd={addFormIsShowing}
+      />
       {addFormIsShowing && <AddTask 
         onAdd={addTask}
       />}
