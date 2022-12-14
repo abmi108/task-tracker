@@ -26,6 +26,7 @@ const taskList = [
 
 function App() {
 
+  const [addFormIsShowing, setAddFormIsShowing] = useState(false);
   const [tasks, setTasks] = useState(taskList);
 
   // add task
@@ -52,10 +53,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <AddTask 
+      <Header onToggle={() => setAddFormIsShowing(!addFormIsShowing)} />
+      {addFormIsShowing && <AddTask 
         onAdd={addTask}
-      />
+      />}
+      
       {tasks.length > 0 ? 
         (
           <Tasks 
