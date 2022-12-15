@@ -11,8 +11,8 @@ const Header = ({ title, onToggle, showAdd }) => {
         <header className="header">
             <h1> {title} </h1>
             {showAdd ? 
-                <Button color="red" text="Close" onClick={onToggle}/> :
-                <Button color="green" text="Add" onClick={onToggle}/>
+                <Button color="#fd5c63" text="Close" onClick={onToggle}/> :
+                <Button color="#00A86B" text="Add" onClick={onToggle}/>
             }
             
         </header>

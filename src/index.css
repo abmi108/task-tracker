@@ -8,6 +8,12 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background: -webkit-linear-gradient(90deg, #200736, #1a5fb4);
+  background: -moz-linear-gradient(90deg, #200736, #1a5fb4);
+  background: -ms-linear-gradient(90deg, #200736, #1a5fb4);
+  background: -o-linear-gradient(90deg, #200736, #1a5fb4);
+  background: linear-gradient(90deg, #200736, #1a5fb4);
+
 }
 
 .container {
@@ -18,6 +24,12 @@ body {
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  background: -webkit-linear-gradient(43deg, #22bec1, #1a3aaa);
+background: -moz-linear-gradient(43deg, #22bec1, #1a3aaa);
+background: -ms-linear-gradient(43deg, #22bec1, #1a3aaa);
+background: -o-linear-gradient(43deg, #22bec1, #1a3aaa);
+background: linear-gradient(43deg, #22bec1, #1a3aaa);
+
 }
 
 .header {
