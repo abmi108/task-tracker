@@ -25,6 +25,14 @@ function App() {
     return data;
   }
 
+   // fetch single Tasks
+   const fetchTask = async (id) => {
+    // gives the task based on ID. mehod is GET by default 
+    const res = await fetch(`http://localhost:5000/tasks/${id}`);
+    const data = await res.json();
+    return data;
+  }
+
   // add task
   const addTask = async (task) => {
     // previously used logic to generate random id's for tasks
@@ -45,14 +53,28 @@ function App() {
   };
 
   // toggle reminder
-  const toggleReminder = (id) => {
+  const toggleReminder = async (id) => {
+    const taskToToggle = await fetchTask(id);
+    const updatedTask = {...taskToToggle, reminder: !taskToToggle.reminder};
+    
+    // it will return the updated task
+    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify(updatedTask)
+    });
+
+    const data = await res.json();
+
     setTasks(
-      tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task)
+      tasks.map((task) => task.id === id ? data : task)
     );
   }; 
 
   // delete task
-  const deleteTask = async (id) => {
+  const deleteTask = async (id) => {  
     console.log(id);
 
     await fetch(`http://localhost:5000/tasks/${id}`, {
