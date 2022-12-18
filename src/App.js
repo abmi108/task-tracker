@@ -3,31 +3,10 @@ import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 
-const taskList = [
-  {
-      id: 1,
-      text: "Go for shopping",
-      day: "Dec 13th at 1:30pm",
-      reminder: true,
-  },
-  {
-      id: 2,
-      text: "Find hotels",
-      day: "Dec 15th at 10:30am",
-      reminder: false,
-  },
-  {
-      id: 3,
-      text: "Go to temple",
-      day: "Dec 19th at 12:30pm",
-      reminder: false,
-  },
-];
-
 function App() {
 
   const [addFormIsShowing, setAddFormIsShowing] = useState(false);
-  const [tasks, setTasks] = useState(taskList);
+  const [tasks, setTasks] = useState();
 
   // add task
   const addTask = (task) => {
