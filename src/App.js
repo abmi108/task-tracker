@@ -43,11 +43,14 @@ function App() {
   }; 
 
   // delete task
-  const deleteTask = (id) => {
+  const deleteTask = async (id) => {
     console.log(id);
-    setTasks(
-      tasks.filter((task) => task.id !== id )
-    );
+
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: "DELETE"
+    });
+
+    setTasks(tasks.filter((task) => task.id !== id));
   };
 
   return (
